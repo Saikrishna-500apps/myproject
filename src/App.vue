@@ -1,20 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <demo/>
+    
+    <HelloWorld />
+    <bforms/>
+    <router-view/>
+    <bform/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import demo from "./components/demo.vue"
-
+//import HelloWorld from './components/HelloWorld.vue'
+//import demo from "./components/demo.vue"
+import bform from './components/bform.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    demo
+    //HelloWorld,
+   // demo,
+   bform,
   }
 }
 </script>
