@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Helloworld from '../components/HelloWorld'
 
 // import test from '../components/test'
-import bforms from '../components/bform'
+import crm from '../components/13-04-2022/crm'
 Vue.use(Router)
 const routes=[
 {
@@ -13,10 +13,10 @@ component:Helloworld
 },
 
 {
-    path:'/bforms',
-    name:"bforms",
-    component:bforms
-}
+    path:'/crm',
+    name:"crm",
+    component:crm
+},
 ]
 let router =new Router ({routes})
 export default router
