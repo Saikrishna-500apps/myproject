@@ -1,54 +1,36 @@
 <template>
+  <div>
+    <h1>{{ message }}</h1>
 
-<div>
-
-<h1>{{ message }} </h1>
-
-<button @click="f1()">
-
-click
-
-</button>
-
-</div>
-
+    <button @click="f1()">click</button>
+  </div>
 </template>
 
 
 <script>
-
 export default {
+  name: "NamE",
 
-name:"NamE",
+  data() {
+    return {
+      message: "Hello World!",
 
-data() {
+      a: [1, 2, 3],
+    };
+  },
 
-return {
+  mounted() {
+    console.log("hi");
+  },
 
-message: 'Hello World!',
+  methods: {
+    f1() {
+      //document.write(this.a[0]),
 
-a:[1,2,3]
+      alert("hi");
 
-}
-
-},
-
-mounted(){console.log("hi")},
-
-methods:{
-
-f1(){
-
-//document.write(this.a[0]),
-
-alert("hi")
-
-console.log(this.a[1])
-
-}
-
-}
-
-}
-
+      console.log(this.a[1]);
+    },
+  },
+};
 </script>

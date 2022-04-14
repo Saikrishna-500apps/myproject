@@ -2,22 +2,26 @@
   <div id="app">
     
     <HelloWorld />
-    <bforms/>
+    <crm/>
     <router-view/>
-    <bform/>
+    <crm/>
   </div>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
 //import demo from "./components/demo.vue"
-import bform from './components/bform.vue'
+//import crm from './components/crm.vue'
+import crm from './components/13-04-2022/crm.vue'
 export default {
   name: 'App',
   components: {
     //HelloWorld,
    // demo,
-   bform,
+   //bform,
+   //btable,
+   
+    crm,
   }
 }
 </script>
