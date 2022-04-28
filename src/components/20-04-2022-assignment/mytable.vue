@@ -22,7 +22,6 @@ id"": 1,""name"": ""id labore ex et quamlaborum""}, {""email"": ""Jayne_Kuhic@sy
       </center>
   </div>
 </template>
-
 <script>
   export default {
     name:'MadH',

@@ -2,12 +2,12 @@
   <div class="container">
     
     <table class="table table-striped table-bordered w-50">
-      <thead>
+      
         <tr>
           <th>Name</th>
           <th>Index</th>
         </tr>
-      </thead>
+      
       
         <tr v-for="user in users" :key="user.id">
           <td>{{ user.Name }} </td>

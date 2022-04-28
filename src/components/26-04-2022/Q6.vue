@@ -2,15 +2,13 @@
   <div>
     <h1 align="center">Country list Npm</h1>
 
-    <b-form-row ><b-col md="8" ><b-form-select  v-model="value" 
-    :options="countries" >
-    </b-form-select>
+    <b-form-row ><b-col md="8" ><b-form-select v-model="value" :options="countries" > </b-form-select>
     </b-col></b-form-row><br />
     <b-button variant="primary" @click="getData">Search</b-button>
     <b-card v-for="value in items" :key="value.domains">
-      <b-card-text>university_name: {{ value.university_name }} </b-card-text>
-      <p>domains: {{ value.domains }}</p>
-      <p @click="redirect(value.website_url)">
+    <b-card-text>university_name: {{ value.university_name }} </b-card-text>
+    <p>domains: {{ value.domains }}</p>
+    <p @click="redirect(value.website_url)">
         website_url: {{ value.website_url }}
       </p>
       <p>state_province: {{ value.state_province }}</p>
@@ -49,7 +47,7 @@ export default {
           domains: row.domains,
           website_url: row.web_pages[0],
           state_province: row["state-province"],
-        };
+       };
       });
     },
   },

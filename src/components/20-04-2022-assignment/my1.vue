@@ -11,7 +11,6 @@ result : [""agile"",""technologies""];"//
 <template>
   <div>
     <input type="text" id="Search" @keyup="search()" />
-
     <ul id="UL">
       <li><a href="#">agile</a></li>
 
@@ -27,32 +26,22 @@ result : [""agile"",""technologies""];"//
     </ul>
   </div>
 </template>
-
 <script>
 export default {
   name: "ThE",
-
   data() {
     return {};
   },
-
   methods: {
     search() {
       var input, filter, ul, li, a, i, txtValue;
-
       input = document.getElementById("Search");
-
       filter = input.value.toUpperCase();
-
       ul = document.getElementById("UL");
-
       li = ul.getElementsByTagName("li");
-
       for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
-
         txtValue = a.textContent || a.innerHTML;
-
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
           li[i].style.display = "";
         } else {

@@ -1,7 +1,7 @@
 
 
 
-"Using Vue Bootstrap forms(b-form), Take the fields as NAME, EMAIL, Age andContact
+"Using Vue Bootstrap forms(b-form), Take the fields as NAME, EMAIL, Age and Contact
 number. Display the filled form object in UI on click of SAVE BUTTO
 <template>
   <div>
@@ -34,7 +34,6 @@ number. Display the filled form object in UI on click of SAVE BUTTO
         required
       ></b-form-input
       ><br />
-
       <b-button type="submit" value="Login">submit</b-button>
     </b-form>
   </div>
@@ -42,7 +41,6 @@ number. Display the filled form object in UI on click of SAVE BUTTO
 <script>
 export default {
   name: "LakH",
-
   data() {
     return {};
   },
