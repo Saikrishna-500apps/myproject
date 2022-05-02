@@ -6,19 +6,15 @@
       <slot>
         <navigation-link url="/profile">
           <span class="fa fa-user"></span>
-
           <font-awesome-icon name="user"></font-awesome-icon>
         </navigation-link>
       </slot>
     </a>
   </div>
 </template>
-
-
 <script>
 export default {
   name: "TaT",
-
   data() {
     return {
       name: "user",

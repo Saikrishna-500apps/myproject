@@ -23,7 +23,7 @@ export default {
     mantra: String,
     Items: [
       { age: 27, firstname: "teja", lastname: "kovuru" },
-      { age: 24, firstname: "siri", lastname: "usirika" },
+      { age: 24, firstname: "siri", lastname: "kovuru" },
     ],
   },
   methods: {

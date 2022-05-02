@@ -1,29 +1,28 @@
 <template>
   <div id="app">
-    
-    <HelloWorld />
-    <crm/>
-    <router-view/>
-    <crm/>
+    <router-view />
   </div>
 </template>
-
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
-//import demo from "./components/demo.vue"
-//import crm from './components/crm.vue'
-import crm from './components/13-04-2022/crm.vue'
+
+// import card6 from './components/18-04-2022/card6.vue';
+// import HelloWorld from './components/HelloWorld.vue'
+// import demo from "./components/demo.vue"
+// import crm from './components/crm.vue'
+// import test2 from './components/test2.vue'
+// import data from './components/19-04-2022/data.vue'
+
+
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    //HelloWorld,
-   // demo,
-   //bform,
-   //btable,
+    
+    //HelloWorld
+  // data,
    
-    crm,
-  }
-}
+    
+  },
+};
 </script>
 
 <style>
