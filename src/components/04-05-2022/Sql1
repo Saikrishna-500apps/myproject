@@ -1,0 +1,19 @@
+
+create table employee(id integer,name text,contact integer);
+insert into employee values(1175,'mahesh',9438566310);
+insert into employee values(1176,'teja',8919338755);
+insert into employee values(1175,'venky',898977888);
+insert into employee values(1185,'abhi',88988745489);
+insert into employee values(1159,'krishna',9888887878);
+
+
+update employee
+set id = 1157
+where name='krishna';
+
+delete from employee
+where name='abhi';
+
+
+select * from employee
+
