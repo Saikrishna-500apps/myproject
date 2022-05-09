@@ -1,5 +1,6 @@
 <template>
   <div>
+       
     <b-card no-body>
       <b-tabs card>
         <b-tab v-for="i in tabs" :key="i" :title="'Form' + i">
@@ -10,11 +11,15 @@
             @click="closeTab(i)"
             >Close Tab</b-button
           >
-
+          
           <b-table stripedhover :items="res" :fields="fields"></b-table>
+           <b-button v-on:click="a++" variant="info"></b-button> &nbsp;
+
         </b-tab>
+        
 
         <template #tabs-end>
+
           <b-nav-item role="presentation" @click.prevent="newTab" href="#"
             ><b>+</b></b-nav-item
           >
@@ -43,12 +48,14 @@ export default {
       this.res = await response.json();
     },
     closeTab(x) {
-      for (let i = 0; i < this.tabs.length; i++) {
-        if (this.tabs[i] === x) {
-          this.tabs.splice(i, 1);
-        }
+    for (let i = 0; i < this.tabs.length; i++) {
+      if (this.tabs[i] === x) {
+        this.tabs.splice(i, 1);
       }
-    },
+    }
   },
+  },
+
+  
 };
 </script>

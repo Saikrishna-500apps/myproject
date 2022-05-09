@@ -9,7 +9,7 @@
     ></b-pagination>
     <p class="mt-2">Current page:{{ currentpage }}</p>
 <center>
-    <b-table
+    <b-table>
       id="my-table"
       :items="res" :fields="fields"
       :per-page="perpage"
