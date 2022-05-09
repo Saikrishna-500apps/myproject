@@ -42,6 +42,25 @@ import StU from '../components/26-04-2022/Q5'
 import JsK from '../components/27-204-2022/boot'
 import WsK from '../components/28-04-2022/Qa1'
 import LsK from '../components/28-04-2022/Qb2'
+import BgY from '../components/28-04-2022/Qc3'
+import ArY from '../components/29-04-2022/MinE'
+import FgR from '../components/03-05-2022/F3'
+import GmR from '../components/03-05-2022/F7'
+import Q5R from '../components/03-05-2022/F5'
+import Q4R from '../components/03-05-2022/F4'
+import Q8R from '../components/03-05-2022/F8'
+//import Q6R from '../components/03-05-2022/F6'
+import Q9R from '../components/03-05-2022/F9'
+import Q10R from '../components/03-05-2022/F10'
+import C1R from '../components/04-05-2022/Crud'
+import M2C from '../components/05-05-2022/T1'
+import M3C from '../components/05-05-2022/T2'
+import M4C from '../components/05-05-2022/col'
+import M5C from '../components/06-05-2022/tab'
+import M6C from '../components/06-05-2022/tab2'
+import M7C from '../components/09-05-2022/T'
+import M8C from '../components/09-05-2022/S1'
+
 
 
 
@@ -220,6 +239,107 @@ const routes = [
         name: "Qb2",
         component: LsK
     },
+
+    {
+        path: '/Qc3',
+        name: "Qc3",
+        component: BgY
+    },
+    {
+        path: '/MinE',
+        name: "MinE",
+        component: ArY
+    },
+    {
+        path: '/F3',
+        name: "F3",
+        component: FgR
+    },
+    {
+        path: '/F7',
+        name: "F7",
+        component: GmR
+    },
+    {
+        path: '/F5',
+        name: "F5",
+        component: Q5R
+    },
+    {
+        path: '/F4',
+        name: "F4",
+        component: Q4R
+    },
+    {
+        path: '/F8',
+        name: "F8",
+        component: Q8R
+    },
+    // {
+    //     path: '/F6',
+    //     name: "F6",
+    //     component: Q6R
+    // },
+    {
+        path: '/F9',
+        name: "F9",
+        component: Q9R
+    },
+    {
+        path: '/F10',
+        name: "F10",
+        component: Q10R
+    },
+    {
+        path: '/Crud',
+        name: "Crud",
+        component: C1R
+    },
+    {
+        path: '/T1',
+        name: "T1",
+        component: M2C
+    },
+    {
+        path: '/T2',
+        name: "T2",
+        component: M3C
+    },
+    {
+        path: '/col',
+        name: "col",
+        component: M4C
+    },
+    {
+        path: '/tab',
+        name: "tab",
+        component: M5C
+    },
+    {
+        path: '/tab2',
+        name: "tab2",
+        component: M6C
+    },
+    {
+        path: '/T',
+        name: "T",
+        component: M7C
+    },
+    {
+        path: '/S1',
+        name: "S1",
+        component: M8C
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 

@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "bootstrap-vue": "^2.22.0",
+    "cheerio": "^1.0.0-rc.10",
     "core-js": "^3.8.3",
     "country-list": "^2.2.0",
     "draggable": "^4.2.0",

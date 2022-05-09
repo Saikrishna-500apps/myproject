@@ -25,7 +25,6 @@ export default {
   data() {
     return {
       items: [{ firstname: "", lastname: "" }],
-      fields: ["firstname", "lastname"],
       value1: "",
     };
   },
@@ -39,8 +38,6 @@ export default {
     Delete() {
       this.items.pop();
     }
-
-  
     
   },
 };
