@@ -60,6 +60,7 @@ import M5C from '../components/06-05-2022/tab'
 import M6C from '../components/06-05-2022/tab2'
 import M7C from '../components/09-05-2022/T'
 import M8C from '../components/09-05-2022/S1'
+import M9C from '../components/10-05-2022/p'
 
 
 
@@ -330,6 +331,13 @@ const routes = [
         name: "S1",
         component: M8C
     },
+    {
+        path: '/p',
+        name: "p",
+        component: M9C
+    },
+    
+    
     
     
     
