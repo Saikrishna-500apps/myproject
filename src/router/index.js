@@ -61,6 +61,11 @@ import M6C from '../components/06-05-2022/tab2'
 import M7C from '../components/09-05-2022/T'
 import M8C from '../components/09-05-2022/S1'
 import M9C from '../components/10-05-2022/p'
+import M10C from '../components/10-05-2022/WaT'
+import M11C from '../components/11-05-2022/SaI'
+import M12C from '../components/10-05-2022/QQ4'
+
+
 
 
 
@@ -336,6 +341,24 @@ const routes = [
         name: "p",
         component: M9C
     },
+    {
+        path: '/WaT',
+        name: "WaT",
+        component: M10C
+    },
+    {
+        path: '/SaI',
+        name: "SaI",
+        component: M11C
+    },
+    {
+        path: '/QQ4',
+        name: "QQ4",
+        component: M12C
+    },
+    
+    
+    
     
     
     
