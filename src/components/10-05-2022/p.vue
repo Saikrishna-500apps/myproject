@@ -1,13 +1,16 @@
 <template>
   <div>
-    <p>Mantra technologies pvt limited </p>
-    
-    <b-button size="l" variant="info" class="float-center" @click="Add">Add</b-button>
-       <b-table striped hover :items="items" :fields="fields"></b-table>
-         <b-form id="form">
-                 product_name:<b-form-input id="name"  class="name" placeholder="Enter product name" required></b-form-input>
-                 price:<b-form-input id="price" class="prices"  placeholder="Enter product price:" required ></b-form-input>
-                 Product_category:<b-form-input id="category" class="categories" placeholder="Enter product category" required ></b-form-input>
+    <p>Mantra technologies pvt limited</p>
+
+    <b-button v-b-toggle.my-sidebar>check the list</b-button>
+    <b-table striped hover :items="items" :fields="fields"></b-table>
+    <b-form id="form">
+      <b-sidebar id="my-sidebar" title="Sidebar" shadow>
+        product_name:<b-form-input id="name" class="name" placeholder="Enter product name" required ></b-form-input>
+        price:<b-form-input id="price" class="prices" placeholder="Enter product price:" required></b-form-input>
+        Product_category:<b-form-input id="category" class="categories" placeholder="Enter product category" required></b-form-input>
+        <b-button size="l" variant="info" class="float-center" @click="Add" >Add</b-button>
+      </b-sidebar>
     </b-form>
   </div>
 </template>

@@ -16,7 +16,7 @@ export default {
   methods: {
     show() {
       this.s3 =
-        this.s1.len === this.s2.len
+        this.s1.length === this.s2.length &&
         this.s1.split("Life") == this.s2.split("File")
     },
   },

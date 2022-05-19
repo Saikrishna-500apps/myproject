@@ -1,36 +1,31 @@
 <template>
   <div>
-    <b-dropdown id="dropdown-1" text="medicines" class="m-md-2">
-      <b-dropdown-item>macpodcv</b-dropdown-item>
-      <b-dropdown-item>glynaze</b-dropdown-item>
-      <b-dropdown-item>azitro</b-dropdown-item>
-    </b-dropdown>
-
-    <b-table :items="items" :fields="fields" :tbody-tr-class="rowClass">
-    </b-table>
+    <b-form-select v-model="selected" :options="options" class="mb-3">
+      <b-form-select-option :value="null" disabled
+        >-- Please select the medicine --</b-form-select-option>
+         <b-button v-b-toggle.my-collapse>Toggle Sidebar</b-button>
+         
+      <b-form-select-option value="macpodcv-200">Option C</b-form-select-option>
+      <b-form-select-option value="glynaze-mf">Option D</b-form-select-option>
+    </b-form-select>
+    <div class="mt-3">
+      Selected: <strong>{{ selected }}</strong>
+    </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "SaI",
   data() {
     return {
-      fields: ["price", "company", "product"],
-      items: [
-        { product: "macpodcv-100", company: "glasco", price: 50 },
-        { product: "glynaze", company: "ritzlabs", price: 10 },
-        { product: "azitro", company: "pliva", price: 15 },
+      selected: null,
+      options: [
+        { value: "macpodcv-200", text: "product_name" },
+        { value: "glynaze-mf", text: "product_name" },
+        { value: "azithromycine", text: "product_name" },
       ],
     };
-  },
-  methods: {
-    medicine() {
-      this.items.push({
-        product: document.getElementById("name").value,
-        company: document.getElementById("company").value,
-        price: document.getElementById("price").value,
-      });
-    },
   },
 };
 </script>

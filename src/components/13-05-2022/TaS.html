@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <h>the unique value is</h>
+    <p id="demo"></p>
+    <button onclick="getUniqueArray()">click</button>
+    <body>
+        <script>
+           function getUniqueArray(_array)
+{
+  let newArray =[... new Set(_array)];
+  return newArray
+}
+let myArray = ["500apps", "clockly", "hipsocial",
+
+"pushninja", "pushninja", "500apps", 
+
+"hipsocial", "clockly", "clockly",
+
+"500apps"] ;
+console.log(getUniqueArray(myArray));
+        
+        document.getElementById("demo").innerHTML= outputArray
+    
+        </script>
+    </body>
+</html>

@@ -58,12 +58,36 @@ import M3C from '../components/05-05-2022/T2'
 import M4C from '../components/05-05-2022/col'
 import M5C from '../components/06-05-2022/tab'
 import M6C from '../components/06-05-2022/tab2'
-import M7C from '../components/09-05-2022/T'
+
 import M8C from '../components/09-05-2022/S1'
 import M9C from '../components/10-05-2022/p'
 import M10C from '../components/10-05-2022/WaT'
 import M11C from '../components/11-05-2022/SaI'
 import M12C from '../components/10-05-2022/QQ4'
+import M13C from '../components/13-05-2022/MyE'
+import M14C from '../components/14-05-2022/Uv'
+import M15C from '../components/16-05-2022/StU'
+import M16C from '../components/16-05-2022/Json'
+//import M17C from '../components/22-04-2022/Js'
+import M18C from '../components/17-05-2022/Form'
+import M19C from '../components/18-05-2022/MaP'
+import M20C from '../components/18-05-2022/FilteR'
+import M21C from '../components/18-05-2022/ForEach2'
+import M22C from '../components/18-05-2022/ProjecT'
+import M23C from '../components/18-05-2022/mvE'
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -326,11 +350,7 @@ const routes = [
         name: "tab2",
         component: M6C
     },
-    {
-        path: '/T',
-        name: "T",
-        component: M7C
-    },
+    
     {
         path: '/S1',
         name: "S1",
@@ -356,6 +376,84 @@ const routes = [
         name: "QQ4",
         component: M12C
     },
+    {
+        path: '/MyE',
+        name: "MyE",
+        component: M13C
+    },
+    {
+        path: '/Uv',
+        name: "Uv",
+        component: M14C
+    },
+    {
+        path: '/StU',
+        name: "StU",
+        component: M15C
+    },
+    {
+        path: '/Json',
+        name: "Json",
+        component: M16C
+    },
+    // {
+    //     path: '/Js',
+    //     name: "Js",
+    //     component: M17C
+    // },
+    {
+        path: '/Form',
+        name: "Form",
+        component: M18C
+    },
+    {
+        path: '/MaP',
+        name: "MaP",
+        component: M19C
+    },
+    {
+        path: '/FilteR',
+        name: "FilteR",
+        component: M20C
+    },
+    {
+        path: '/ForEach2',
+        name: "ForEach2",
+        component: M21C
+    },
+    {
+        path: '/ProjecT',
+        name: "ProjecT",
+        component: M22C
+    },
+    {
+        path: '/mvE',
+        name: "mvE",
+        component: M23C
+    },
+    
+    
+   
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+    
+    
     
     
     
