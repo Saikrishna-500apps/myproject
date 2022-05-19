@@ -1,17 +1,12 @@
 <template>
   <div align="center"><b-row ><b-col md="6" ><b-card><b-form id="form">
             Enter First Name:<b-form-input id="s1" v-model="value1" placeholder="enter Firstname" ></b-form-input>
-            Enter LastName:<b-form-input id="s2" v-model="value2" placeholder="enter Lastname"  ></b-form-input>
+            Enter Last  Name:<b-form-input id="s2" v-model="value2" placeholder="enter Lastname"  ></b-form-input>
             <b-button @click="Add()">Add</b-button>
             <b-button @click="Delete()">Delete</b-button>
             <b-button @click="Update()">Update</b-button>
           </b-form>
-          <b-table
-            striped
-            hover
-            :items="items"
-            :fields="fields"
-          ></b-table> </b-card></b-col
+          <b-table stripedhover:items="items" :fields="fields" ></b-table> </b-card></b-col
     ></b-row>
   </div>
 </template>

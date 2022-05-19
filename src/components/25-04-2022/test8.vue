@@ -21,6 +21,7 @@ export default {
   methods: {
     fun() {
       this.res = this.officers.filter((row) => row.name == "General Veers");
+      
       return this.res;
     },
   },
