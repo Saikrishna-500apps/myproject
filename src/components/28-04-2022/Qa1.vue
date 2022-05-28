@@ -1,23 +1,19 @@
 <template>
   <div>
+    <b-container>
     <b-form-select v-model="value" :options="countries"></b-form-select><br /><br />
     <button @click="fun()">click</button>
+    </b-container>
     <b-input-group>
-
-
   
   <b-form-input id="filter-input" v-model="filter" type="search" placeholder="Type to Search" ></b-form-input>
   <b-input-group-append><b-button :disabled="!filter" @click="filter = ''">Clear</b-button></b-input-group-append>
   </b-input-group> <b-form-group v-model="sortDirection" v-slot="{ ariaDescribedby }">  <b-form-checkbox-group 
   v-model="filterOn" :aria-describedby="ariaDescribedby">
-
-
         <b-form-checkbox value="university_name">university_name</b-form-checkbox >
-        <b-form-checkbox value="domains">domains</b-form-checkbox>
-        <b-form-checkbox value="website_url">website_url</b-form-checkbox>
-        <b-form-checkbox value="isActive">state_province</b-form-checkbox>
+        <b-form-checkbox value="domains">Domains</b-form-checkbox>
+        <b-form-checkbox value="website_url">Website_url</b-form-checkbox>
       </b-form-checkbox-group></b-form-group>
-          
      <b-table :items="items" :fields="fields" :filter="filter" :filter-included-fields="filterOn" @filtered="onFiltered" ></b-table>
        </div>
 </template>
@@ -38,8 +34,6 @@ export default {
       filterOn: [],
     };
   },
-
-
   computed: {
     sortOptions() {
       return this.fields

@@ -5,7 +5,8 @@ import Router from 'vue-router'
 import Sai from '../components/14-04-2022/test3'
 // import Siri from '../components/14-04-2022/test4'
 // import TejA from '../components/14-04-2022/test5'
-import prop from '../components/18-04-2022/prop2'
+//import prop from '../components/25-05-2022/prop'
+import prop2 from '../components/25-05-2022/prop2'
 // import KrishnA from '../components/18-04-2022/card6'
 import Avenger from '../components/19-04-2022/data'
 //import KovurU from '../components/19-04-2022/axios'
@@ -42,8 +43,6 @@ import StU from '../components/26-04-2022/Q5'
 import JsK from '../components/27-204-2022/boot'
 import WsK from '../components/28-04-2022/Qa1'
 import LsK from '../components/28-04-2022/Qb2'
-import BgY from '../components/28-04-2022/Qc3'
-import ArY from '../components/29-04-2022/MinE'
 import FgR from '../components/03-05-2022/F3'
 import GmR from '../components/03-05-2022/F7'
 import Q5R from '../components/03-05-2022/F5'
@@ -74,27 +73,19 @@ import M19C from '../components/18-05-2022/MaP'
 import M20C from '../components/18-05-2022/FilteR'
 import M21C from '../components/18-05-2022/ForEach2'
 import M22C from '../components/18-05-2022/ProjecT'
-import M23C from '../components/18-05-2022/mvE'
+import M23C from '../components/18-05-2022/SignUp'
+import M24C from '../components/18-05-2022/DisplaY'
+import M25C from '../components/18-05-2022/CombinE'
+import M26C from '../components/18-05-2022/TexT'
+import M27C from '../components/23-05-2022/LogIn'
+import M28C from '../components/23-05-2022/AdD'
+import My1 from '../components/26-05-2022/My1'
+import My2 from '../components/26-05-2022/My2'
+import Prop1 from '../components/26-05-2022/Prop1'
+import dropdown from '../components/26-05-2022/dropdown'
+import Task2 from '../components/27-05-2022/Task2'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 Vue.use(Router)
 const routes = [
     
@@ -103,6 +94,20 @@ const routes = [
         name: "test3",
         component: Sai
     },
+    {
+        path: '/Task1',
+        name: "Task1",
+        component: Task2
+    },
+
+
+
+    {
+        path: '/dropdown',
+        name: "dropdown",
+        component: dropdown
+    },
+
 
     {
         path: '/data',
@@ -112,8 +117,13 @@ const routes = [
     {
         path: '/prop2',
         name: "prop2",
-        component: prop
+        component: prop2
     },
+    // {
+    //     path: '/prop',
+    //     name: "prop",
+    //     component: prop
+    // },
     {
         path: '/test',
         name: "test",
@@ -270,16 +280,16 @@ const routes = [
         component: LsK
     },
 
-    {
-        path: '/Qc3',
-        name: "Qc3",
-        component: BgY
-    },
-    {
-        path: '/MinE',
-        name: "MinE",
-        component: ArY
-    },
+    // {
+    //     path: '/Qc3',
+    //     name: "Qc3",
+    //     component: BgY
+    // },
+    // {
+    //     path: '/MinE',
+    //     name: "MinE",
+    //     component: ArY
+    // },
     {
         path: '/F3',
         name: "F3",
@@ -287,6 +297,16 @@ const routes = [
     },
     {
         path: '/F7',
+        // {
+        //     path: '/Qc3',
+        //     name: "Qc3",
+        //     component: BgY
+        // },
+        // {
+        //     path: '/MinE',
+        //     name: "MinE",
+        //     component: ArY
+        // },
         name: "F7",
         component: GmR
     },
@@ -427,54 +447,53 @@ const routes = [
         component: M22C
     },
     {
-        path: '/mvE',
+        path: '/SignUp',
         name: "mvE",
         component: M23C
     },
+    {
+        path: '/DisplaY',
+        name: "DisplaY",
+        component: M24C
+    },
+    {
+        path: '/Combine',
+        name: "Combine",
+        component: M25C
+    },
+    {
+        path: '/text',
+        name: "TexT",
+        component: M26C
+    },
+    {
+        path: '/LogIn',
+        name: "LogIn",
+        component: M27C
+    },
+    {
+        path: '/AdD',
+        name: "Add",
+        component: M28C
+    },
+    {
+        path: '/My1',
+        name: "My1",
+        component: My1
+    },
+    {
+        path: '/My2',
+        name: "My2",
+        component: My2
+    },
+    {
+        path: '/Prop1',
+        name: "prop1",
+        component: Prop1
+    },
     
     
-   
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
+     
 ]
 let router = new Router({ routes })
 export default router
