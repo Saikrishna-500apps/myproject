@@ -84,6 +84,7 @@ import My2 from '../components/26-05-2022/My2'
 import Prop1 from '../components/26-05-2022/Prop1'
 import dropdown from '../components/26-05-2022/dropdown'
 import StudentData from '../components/27-05-2022/StudentData'
+import Furniture from '../components/31-05-2022/Furniture'
 
  
 Vue.use(Router)
@@ -93,6 +94,11 @@ const routes = [
         path: '/test3',
         name: "test3",
         component: Sai
+    },
+    {
+        path: '/Furniture',
+        name: "Furniture",
+        component: Furniture
     },
     {
         path: '/StudentData',
