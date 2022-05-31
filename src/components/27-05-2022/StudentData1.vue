@@ -1,34 +1,26 @@
 <template>
-
-
   <div>
-
-  <table class="css-serial">
-    </table>
-    <b-navbar toggleable="" type="dark" variant="info"><br /> </b-navbar>
     <div>
-      <b-container>
-        <b-button
-          class="button1"
-          type="submit"
-          v-on:click="Text()"
-          variant="primary"
-          >Vue</b-button
-        >
-      </b-container>
-      <b-button class="button" variant="success">
+      <b-button class="save" variant="success">
         login: sai krishna teja</b-button
       ><br />
     </div>
-    <b-button @click="Create">Add contact</b-button><br />
-    <b-table class="css-serial" striped hover :items="tableData" :fields="columns" id="table">
+    <b-button @click="Create" variant="primary">Add details</b-button><br />
+    <b-table
+      striped
+      hover
+      :items="tableData"
+      :fields="columns"
+      class="css-serial" >
       <template #cell(action)="data">
         <b-button @click="Edit(data.item)" variant="info">Update</b-button>
-        <b-button @click="Delete(data.item)" v-modal="'edit-modal'" variant="danger">Delete</b-button>
+        <b-button @click="DeleteMessage(data.item)" variant="danger">Delete</b-button>
       </template>
+      <template #cell(DateOfJoning)="data">{{ convert_date(data.item.DateOfJoning) }}</template>
     </b-table>
-
     <b-modal v-model="modalShow" title="AddEmploye" hide-footer>
+      <div class="d-flex align-items-center mb-3">
+    </div>
       <b-form @submit.prevent="save">
         <slot :formdata="editedItem" name="input-fields"> </slot>
         <b-button type="submit" variant="success"> Submit</b-button>
@@ -38,39 +30,69 @@
 </template>
 <script>
 import axios from "axios";
+import Moment from "moment";
 export default {
-  name: "app",
+  name: "EmployeeData",
   props: ["endpoint", "columns", "formFields"],
   data() {
     return {
+      loading: false,
+        loadingTime: 0,
+        maxLoadingTime: 3,
       editedItem: this.formFields,
       modalShow: false,
       editedIndex: -1,
-      tableData:[],
+      tableData: [],
     };
   },
   computed: {
     Title() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
+      return this.editIndex === -1 ? "Add Employee" : "Edit Item";
     },
-    
+    itemsWithSno() {
+      return this.columns.map((item) => ({
+        ...item,
+        sno: this.editIndex + 1,
+      }));
+    },
   },
   methods: {
+    convert_date(item){
+      return  Moment(item).format("ll")
+    },
     Create() {
       this.modalShow = true;
       this.editedItem = Object.assign({}, this.formFields);
       this.editedIndex = -1;
     },
+    
     Edit(item) {
       this.modalShow = true;
       this.editedIndex = this.tableData.indexOf(item);
       this.editedItem = Object.assign({}, item);
     },
-    Delete(item) {
-      const index = this.tableData.indexOf(item);
-      confirm("Are you sure you want to delete this item?") &&
-        this.tableData.splice(index, 1);
-      axios.delete(this.endpoint + "/" + item.id);
+   DeleteMessage(item) {
+      this.item = "";
+      this.$bvModal
+        .msgBoxConfirm("Are you sure to delete employee.", {
+          title: "Delete Employee",
+          size: "sm",
+          buttonSize: "sm",
+          okVariant: "primary",
+          okTitle: "YES",
+          cancelVariant: "danger",
+          cancelTitle: "cancel",
+          footerClass: "p-2",
+          hideHeaderClose: false,
+          centered: true,
+        })
+        .then((value) => {
+          if(value){
+          const index = this.tableData.indexOf(item);
+          this.tableData.splice(index, 1);
+          axios.delete(this.endpoint + "/" + value.id);
+          }else return;
+        });
     },
     close() {
       this.modalShow = false;
@@ -97,30 +119,18 @@ export default {
   },
 };
 </script>
-<style scoped>
-.button1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.button {
+<style>
+.save {
   position: absolute;
   top: 0;
   right: 0;
 }
-/* #table{
-  position: relative;
-  left: 470px;
-} */
- 
-/* Automatic Serial Number Row */
+
 .css-serial {
- counter-reset: serial-number; /* Set the serial number counter to 0 */
+  counter-reset: employee_details; /* Set the serial number counter to 0 */
 }
 .css-serial tr td:first-child:before {
- counter-increment: serial-number; /* Increment the serial number counter */
- content: counter(serial-number); 
+  counter-increment: employee_details; /* Increment the serial number counter */
+  content: counter(employee_details); /* Display the counter */
 }
-
-
 </style>

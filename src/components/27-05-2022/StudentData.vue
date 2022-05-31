@@ -1,29 +1,21 @@
 <template>
   <div>
+    <b-navbar toggleable="" type="dark" variant="info"><br /> </b-navbar>
     <center>
       <h3 align="left">Employee Data</h3>
-      <Task1
+      <StudentData1
         :columns="[
-           'sno',
+          'sno',
           'name',
-          'age',
+          'Age',
           'gender',
           'DateOfJoning',
           'department',
           'Action',
         ]"
-        :form-fields="{ 
-          sno: '',
-          name: '',
-          age: '',
-          gender: '',
-          DateOfJoning: '',
-          department: '',
-          action: '',
-        }"
+        :form-fields="{}"
       >
         <template v-slot:input-fields="{ formdata }">
-     
           Name:
           <b-form-input
             id="input-1"
@@ -34,7 +26,9 @@
           Age:
           <b-form-input
             id="input-1"
-            v-model="formdata.age"
+            v-model="formdata.Age"
+            :min="0"
+            :max="100"
             required
             placeholder="Enter Age"
           ></b-form-input>
@@ -45,12 +39,11 @@
             :options="options"
           ></b-form-select>
           DateOfJoning:
-          <b-form-datepicker
-            v-model="formdata.DateOfJoning"
-            :min="min"
-            :max="max"
-            locale="en"
-          ></b-form-datepicker>
+        <b-form-datepicker
+      v-model="formdata.DateOfJoning"
+      :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }"
+      locale="en"
+    ></b-form-datepicker>
           Department:
           <b-form-select
             id="input-1"
@@ -58,47 +51,41 @@
             :options="options1"
             required
             placeholder="Enter Department"
-          ></b-form-select>
+          ></b-form-select> 
         </template>
-      </Task1>
+      </StudentData1>
     </center>
   </div>
 </template>
 <script>
-import Task1 from "./Task1.vue";
-export default {
-  name: "app",
-  components: { Task1 },
-  columns: [
-    {
-      data: null,
-      render: function(data,type,row,meta){
-        return meta.row+1;
-  
-      },
-  
-    },
-  ],
+import StudentData1 from "./StudentData1.vue";
 
+export default {
+  name: "EmployeeData",
+  components: { StudentData1 },
   data() {
     return {
-      user: {
-        gender: " ",
-      },
+       formatted: '',
       options: [
         { value: "Male", text: "Male" },
         { value: "Female", text: "Female" },
       ],
       options1: [
-        { value: "Accounts", text: "Accounts" },
+        { value: "Developer", text: "Developer" },
+        { value: "Frontend-developer", text: "Frontend-developer" },
+        { value: "TestEngineer", text: "TestEngineer" },
+        { value: "Database", text: "Database" },
         { value: "Admin", text: "Admin" },
-        { value: "IT", text: "IT" },
-        { value: "Engineering", text: "Engineering" },
-        { value: "Finance", text: "Finance" },
+        { value: "PowerBI", text: "PowerBI" },
         { value: "Business Analyst", text: "Business Analyst" },
       ],
-  
+      
+
     };
+
   },
+  methods:{
+   
+  }
 };
 </script>
