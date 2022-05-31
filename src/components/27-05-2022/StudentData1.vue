@@ -11,15 +11,16 @@
       hover
       :items="tableData"
       :fields="columns"
-      class="css-serial"
-    >
+      class="css-serial" >
       <template #cell(action)="data">
         <b-button @click="Edit(data.item)" variant="info">Update</b-button>
         <b-button @click="DeleteMessage(data.item)" variant="danger">Delete</b-button>
-    
       </template>
+      <template #cell(DateOfJoning)="data">{{ convert_date(data.item.DateOfJoning) }}</template>
     </b-table>
     <b-modal v-model="modalShow" title="AddEmploye" hide-footer>
+      <div class="d-flex align-items-center mb-3">
+    </div>
       <b-form @submit.prevent="save">
         <slot :formdata="editedItem" name="input-fields"> </slot>
         <b-button type="submit" variant="success"> Submit</b-button>
@@ -29,11 +30,15 @@
 </template>
 <script>
 import axios from "axios";
+import Moment from "moment";
 export default {
   name: "EmployeeData",
   props: ["endpoint", "columns", "formFields"],
   data() {
     return {
+      loading: false,
+        loadingTime: 0,
+        maxLoadingTime: 3,
       editedItem: this.formFields,
       modalShow: false,
       editedIndex: -1,
@@ -52,11 +57,12 @@ export default {
     },
   },
   methods: {
+    convert_date(item){
+      return  Moment(item).format("ll")
+    },
     Create() {
       this.modalShow = true;
       this.editedItem = Object.assign({}, this.formFields);
-      // this.editedItem.sno = this.tableData.length + 1;
-
       this.editedIndex = -1;
     },
     

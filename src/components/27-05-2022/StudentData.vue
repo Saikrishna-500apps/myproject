@@ -16,13 +16,6 @@
         :form-fields="{}"
       >
         <template v-slot:input-fields="{ formdata }">
-          <!-- Sno:
-          <b-form-input
-            id="input-1"
-            v-model="formdata.Sno"
-            required
-            
-          ></b-form-input> -->
           Name:
           <b-form-input
             id="input-1"
@@ -46,10 +39,11 @@
             :options="options"
           ></b-form-select>
           DateOfJoning:
-          <b-form-datepicker
-            v-model="formdata.DateOfJoning"
-            locale="en"
-          ></b-form-datepicker>
+        <b-form-datepicker
+      v-model="formdata.DateOfJoning"
+      :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }"
+      locale="en"
+    ></b-form-datepicker>
           Department:
           <b-form-select
             id="input-1"
@@ -57,8 +51,7 @@
             :options="options1"
             required
             placeholder="Enter Department"
-          ></b-form-select>
-           
+          ></b-form-select> 
         </template>
       </StudentData1>
     </center>
@@ -66,25 +59,33 @@
 </template>
 <script>
 import StudentData1 from "./StudentData1.vue";
+
 export default {
   name: "EmployeeData",
   components: { StudentData1 },
   data() {
     return {
+       formatted: '',
       options: [
         { value: "Male", text: "Male" },
         { value: "Female", text: "Female" },
       ],
       options1: [
         { value: "Developer", text: "Developer" },
-        { value: "Frontend-devloper", text: "Frontend-devloper" },
+        { value: "Frontend-developer", text: "Frontend-developer" },
         { value: "TestEngineer", text: "TestEngineer" },
         { value: "Database", text: "Database" },
         { value: "Admin", text: "Admin" },
         { value: "PowerBI", text: "PowerBI" },
         { value: "Business Analyst", text: "Business Analyst" },
       ],
+      
+
     };
+
   },
+  methods:{
+   
+  }
 };
 </script>
