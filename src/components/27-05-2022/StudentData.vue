@@ -11,7 +11,7 @@
           'gender',
           'DateOfJoning',
           'department',
-          'Action',
+          'Action'
         ]"
         :form-fields="{}"
       >

@@ -127,10 +127,10 @@ export default {
 }
 
 .css-serial {
-  counter-reset: employee_details; /* Set the serial number counter to 0 */
+  counter-reset: employee_details; 
 }
 .css-serial tr td:first-child:before {
-  counter-increment: employee_details; /* Increment the serial number counter */
-  content: counter(employee_details); /* Display the counter */
+  counter-increment: employee_details; 
+  content: counter(employee_details); 
 }
 </style>
