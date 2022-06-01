@@ -5,12 +5,12 @@
       <h3 align="left">Employee Data</h3>
       <StudentData1
         :columns="[
-          'sno',
-          'name',
+          'Sno',
+          'Name',
           'Age',
-          'gender',
+          'Gender',
           'DateOfJoning',
-          'department',
+          'Department',
           'Action'
         ]"
         :form-fields="{}"
@@ -59,7 +59,6 @@
 </template>
 <script>
 import StudentData1 from "./StudentData1.vue";
-
 export default {
   name: "EmployeeData",
   components: { StudentData1 },
@@ -79,10 +78,7 @@ export default {
         { value: "PowerBI", text: "PowerBI" },
         { value: "Business Analyst", text: "Business Analyst" },
       ],
-      
-
     };
-
   },
   methods:{
    
