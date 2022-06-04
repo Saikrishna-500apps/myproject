@@ -83,8 +83,10 @@ import My1 from '../components/26-05-2022/My1'
 import My2 from '../components/26-05-2022/My2'
 import Prop1 from '../components/26-05-2022/Prop1'
 import dropdown from '../components/26-05-2022/dropdown'
-import StudentData from '../components/27-05-2022/StudentData'
-import Furniture from '../components/31-05-2022/Furniture'
+//import StudentDataParent from '../components/27-05-2022/StudentDataParent'
+
+import FurnitureParent from '../components/31-05-2022/FurnitureParent'
+
 
  
 Vue.use(Router)
@@ -96,15 +98,16 @@ const routes = [
         component: Sai
     },
     {
-        path: '/Furniture',
-        name: "Furniture",
-        component: Furniture
+        path: '/FurnitureParent',
+        name: "FurnitureParent",
+        component: FurnitureParent
     },
-    {
-        path: '/StudentData',
-        name: "StudentData",
-        component: StudentData
-    },
+    
+    // {
+    //     path: '/StudentDataParent',
+    //     name: "StudentDataParent",
+    //     component: StudentDataParent
+    // },
     
     {
         path: '/dropdown',

@@ -24,7 +24,7 @@
                         {id: 6, first_name: 'Bamm Bamm', last_name: 'Rubble' },
                         {id: 7, first_name: 'The Great', last_name: 'Gazzoo' },
                         {id: 8, first_name: 'Rockhead', last_name: 'Slate' },
-                        {id: 9, first_name: 'venky', last_name: 'tiruviduka' }
+                        {id: 9, first_name: 'venky', last_name: 'tiruvidula' }
                         ]
                     }
                 },
