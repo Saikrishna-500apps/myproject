@@ -26,7 +26,7 @@
       <b-button v-b-toggle.sidebar-1 type="Menu" variant="dark" class="home">
         <b-icon icon="menu-button-wide"></b-icon>
       </b-button>
-      <b-sidebar id="sidebar">
+      <b-sidebar id="sidebar-1">
         <div>
           <h3>Logistics</h3>
           <br />
@@ -50,9 +50,9 @@
         >Add <b-icon icon="plus-circle"
       /></b-button>
       <b-button variant="warning" class="import"
-        >import <b-icon icon="-arrow-down"
+        >import <b-icon icon="-arrow-down" @click="readFile()"
       /></b-button>
-      <b-button variant="secondary" class="export"
+      <b-button variant="secondary" class="export" @click="Export()"
         >export <b-icon icon="arrow-up"
       /></b-button>
      
@@ -88,13 +88,12 @@
             aria-controls="table"
           ></b-pagination>
         </b-card>
-         <input type="file" ref="doc" @change="readFile()" />
+         <input type="file" ref="doc"  />
       <div id="file">{{ content }}</div>
       </center>
       <b-modal v-model="modalShow" :title="Title" hide-footer>
         <b-form @submit.prevent="save">
           <slot :formdata="editedItem" name="input-fields"> </slot>
-          
           <center>
             <b-button variant="primary" type="submit" class="btn btn-primary"
               >Save</b-button
@@ -107,6 +106,7 @@
 </template>
 <script>
 import axios from "axios";
+import exportFromJSON from 'export-from-json'
 export default {
   name: "FurnitureData",
   props: ["columns", "formFields"],
@@ -185,6 +185,29 @@ export default {
         (response) => (this.tableData = response.data.data)
       );
     },
+    Export() {
+      const objectToCsv = function (data) {
+        const csvRows = [];
+        const headers = Object.keys(data[0]);
+        csvRows.push(headers.join(","));
+        for (const row of data) {
+          const values = headers.map((header) => {
+            const val = row[header];
+            return `"${val}"`;
+          });
+          csvRows.push(values.join(","));
+        }
+        return csvRows.join("\n");
+      };
+      const data = this.tableData;
+      const csvData = objectToCsv(data);
+      console.log(csvData);
+      //const data = this.tableData;
+      const fileName = "TableData";
+      const exportType = exportFromJSON.types.csv;
+      exportFromJSON({ data, fileName, exportType });
+    },
+  
     readFile() {
       this.file = this.$refs.doc.files[0];
       const reader = new FileReader();
@@ -197,11 +220,31 @@ export default {
       } else {
         reader.onload = (res) => {
           document.getElementById("file").innerHTML = res.target.result;
+          const convert = csv => {
+          const myArray = csv.split("\n");
+        //console.log(myArray[0]);
+                    //console.log(myArray[0]);
+                   const keys = myArray[0].split(',')
+                   //const index = myArray.length-1
+                   return myArray.splice(1).map(myArray => {
+                     return myArray.split(',').reduce((acc, cur, i) => {
+                       const toAdd = {};
+                       toAdd[keys[i]] = cur;
+                       return { ...acc, ...toAdd};
+                     },{})
+                   })
+          }
+          const coverted = res.target.result
+          console.log(convert(coverted))
+          this.tableData=convert(coverted);
+          console.log( this.tableData)
+          return this.tableData;
         };
         reader.onerror = (err) => console.log(err);
         reader.readAsText(this.file);
       }
     },
+    
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-      <FurnitureC
+      <furnitureChild
         :columns="['⬜','Id', 'Product', 'Sku', 'Type', 'Quality', 'Operation']"
         :form-fields="{}" >
         <template v-slot:input-fields="{ formdata }"><br/>
@@ -41,14 +41,15 @@
             placeholder="Enter Quality"
           ></b-form-input>
         </template>
-      </FurnitureC><br/><br/>
+      </FurnitureChild><br/><br/>
   </div>
 </template>
 <script>
-import FurnitureC from "./FurnitureChild.vue";
+import FurnitureChild from './FurnitureChild.vue';
+
 export default {
   name: "FurnitureData",
-  components: { FurnitureC },
+  components: { FurnitureChild },
   data() {
     return {
        
